@@ -1,0 +1,22 @@
+version: "3.2"
+services:
+  questionnaire-backend:
+    build:
+      context: .
+      dockerfile: ./interviewTask/DockerFile
+    volumes:
+      - ./interviewTask:/backend
+    ports:
+      - "8000:8000"
+    command: python3 manage.py runserver 0.0.0.0:8000
+  questionnaire-frontend:
+    build:
+      context: .
+      dockerfile: ./interviewTaskFrontEnd/user-app/DockerFile
+    volumes:
+      - ./interviewTaskFrontEnd/user-app:/frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - questionnaire-backend
+    command: npm start
