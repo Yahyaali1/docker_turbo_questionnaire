@@ -19,7 +19,7 @@
 ```
 ### How to instructions:
 #### Project Setup
-Setting up both projects using docker-compose.
+Setting up both projects using docker-compose. (If you are looking to run projects on your machine you need to follow README under each project)
 - Using Terminal 
    - Clone/extract project files in your local drive with the mentioned project structure above. 
    - ``` docker-compose build ``` to build both projects.
